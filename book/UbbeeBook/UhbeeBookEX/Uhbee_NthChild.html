@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<style>
+  *{margin:0; padding:0;}
+  ul{list-style:none; width:480px;}
+  #round li{width:100px; height:100px; background:#f1779e;
+            margin:10px; float:left; border-radius:50px;
+            -moz-border-radius:50px;
+            -webkit-border-radius:50px;
+          }
+
+  #round li:nth-child(even){background:#c6d84e;}
+  #round li:nth-child(3n+1){background:#fcb354;}
+
+  #box li{width:100px; height:100px; background:#c6d84e; margin:10px; border-right:5px; float:left;}
+  #box li:nth-child(2n+1){background:#f1779e;}
+  #box li:nth-last-child(-n+1){background:#fcb354;}
+
+
+
+</style>
+
+
+
+  <title>Document</title>
+</head>
+<body>
+  <ul id="round">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <ul id="box">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</body>
+</html>

@@ -1,0 +1,29 @@
+01. 디자인 시안을 고려하여 각 디바이스 별 레이아웃 구성을 결정.
+- 대형 모니터
+- 와이드 모니터
+- 일반 모니터
+- 태블릿 PC
+- 소형 태블릿 PC
+- 스마트 폰
+
+02. 레이아웃 파악하기
+- 손으로 박스를 그려 영역 나누는 방법.
+- 툴을 사용하여 템플릿을 잡아가는 방법.
+
+03. 디바이스의 웹 브라우저 해상도로 보이게 하는 meta 태그.
+<meta http-equiv="content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width", initial-scale=1.0"/>
+- 문서의 인코딩은 UTF-8 로 설정.
+- 뷰포트는 간단하게 가로값(width)을 디바이스의 기본 가로값(device-width)으로 유지.
+- 비율은 1.0으로 설정.
+
+04. 파비콘 : PC용 아이콘.
+- www.fabicon.cc
+
+05. 웹 폰트
+- 서버에 내장 업로드 방식.
+- 무료로 제공하는 사이트에서 주소를 링크로 거는 방식.
+- http://api.mobilis.co.kr/webfonts
+- http://www.google.com/webfonts
+- http://typekit.com/fonts/source-sans-pro
+- http://www.weblink.com/font/source-sans-pro

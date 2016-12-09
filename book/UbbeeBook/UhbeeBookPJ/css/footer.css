@@ -1,0 +1,8 @@
+#foot_logo{float:left; width:243px;}
+#foot_lofo img{margin:25px 0 0 60px;}
+#foot_area{float:left; border-left:1 solid #e9e9e9; height:120px;}
+#foot_menu{margin:15px 0 0 30px;}
+#foot_menu a{font-size:0.635em; color:#999; margin-right: 12px;}
+#foot_menu a strong{color:#222;}
+#foot_copy{font-size:0.625em; color:#999; margin:10px 0 0 30px; line-height:14px} /* 10px // 16px */
+#foot .right_area{background:#f2b598; float:right; width:220px; height:120px; border-left:1px solid #e9e9e9;}

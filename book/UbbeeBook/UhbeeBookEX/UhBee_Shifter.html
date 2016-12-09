@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    *{margin: 0; padding: 0;}
+    #warp{width: 1000px; margin: 0 auto;}
+    #box_a{height: 400px; background: #fcb354; float: left; width: 20%;}
+    #box_b{height: 200px; background: #f1779e; float: left; width: 80%;}
+    #box_c{height: 200px; background: #24bbaf; float: left; width: 80%;}
+    @@media screen and (max-width:1024px) {
+      #wrap{width: 90%}
+    }
+    @media screen and (max-wifth:800px) {
+      #wrap{width: 100%}
+      #box_a{float: none; width: 100%;}
+      #box_b{float: none; width: 100%;}
+      #box_c{float: none; width: 100%;}
+    }
+  </style>
+  <title>Shifter Pattern</title>
+</head>
+<body>
+  <div id="warp">
+    <div id="box_a"></div>
+    <div id="box_b"></div>
+    <div id="box_c"></div>
+  </div>
+</body>
+</html>

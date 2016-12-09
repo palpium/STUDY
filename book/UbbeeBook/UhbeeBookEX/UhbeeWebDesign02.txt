@@ -1,0 +1,83 @@
+01. border-radius : 모서리가 둥근 박스
+- 픽셀단위 작업 시에는 퍼센트로 값을 구해서 사용함.
+- div{border-radius:15px;}
+- div{
+      width:200px; height:50px; background:#24bbaf;
+      border-radius:15px;
+      -moz-border-radius:15px;
+      -webkit-border-radius:15px;
+      }
+- border-top-left-radius:50% 50%;
+- border-top-right-radius:30%;
+- border-bottom-left-radius:100% 50%;
+- border-bottom-right-radius:50% 50%;
+
+* / 사선으로 기운 나뭇잎
+- border-top-left-radius:100% 100%;
+- border-bottom-right-radius:100% 100%;
+
+* 정 원형
+- border-radius:50%
+
+02. text-shadow : 텍스트 안에 그림자 효과
+- text-shadow:5px 5px 3px #000;
+
+03.Reset CSS
+- 웹 표준, HTML5를 마크업하면서 크로스 브라우징을 위해서 기본적으로 CSS를 설정하는 것을 말함.
+- http://www.cssreset.com/
+- 대표 사이트의 코드를 보고 자신만의 Reset CSS를 커스터마이징 하는 것이 중요함.
+
+- 어비의 Reset CSS
+/*Reset CSS*/
+*{margin:0; padding:0; border:0; outline:0; vertical-align:top;}
+article, aside, details, figcaption, figure,footer, hgroup, menu, navm section{display:block;}
+ul, ol, dl{list-style:none;}
+img, video{max-width:100%;}
+a{text-decoration:none; color:#000;}
+table{borer-collapse:collapse; border-spacing:0;}
+input, select{vertical-align:middle;}
+body{font-family:'돋움',dotum; font-size:100%; line-height:1;}
+label{cursor:pointer;}
+.blinf, legend, hr, caption{display:block; overflow:hidden; position:absolute; top:0; left:-1000em;}
+i, em, address{font-style:normal; font-weight:normal;}
+
+04. 기획
+- Information Architecture 설계
+  : 디바이스에 따라 페이지에 들어갈 요소를 정확히 설계해야함.
+  : 해상도에 따른 요소 변경이 필요.
+  : 작은 화면에 최적화된 정보 요로를 결정.
+
+- User Interface 설계
+  : 해상도에 변화에 따른 레이아웃 형태의 변경 & 각 요소의 위치도 변경.
+  : 일반적으로 PC / Tablet / Mobile 세 가지 디자인 시안을 결정.
+
+- User Interface Design 기획
+  : 이미지의 경우 Flexible Images / 고정 Fixel / 해상도에 따른 유연한 변화 em & %.
+  : 네비게이션의 경우 고정형 / 퍼센트 반응형.
+  : 터치 영역과 터치를 활용한 인터렉션 설계.
+
+05. 반응형 디자인 패턴
+- Mostly Fluid
+  : 반응형 웹 디자인에서 가장 많이 사용하는 패턴.
+  : Wide PC에서는 가변이 아닌 고정형으로 가고 이보다 작아지면 양쪽은 여백을 남기고 내부는 가변적으로 변하게끔 설정하는 패턴.
+  : 태블릿에서는 여백 없이 가로가 100% 상태로 콘텐츠 노출.
+  : 모바일에서는 작은 크기에서 최적화하기 위해 column들을 한 개씩 세로로 정렬 (vertical align).
+
+- Column drop
+  : 가로로 정렬 (Inline align) 되어 있던 요소가 해상도에 따라서 세로로 정렬됨.
+  : 전체 영역의 크기가 해상도에 따라 변경되려면 #warp 요소가 꼭 필요하지만, 예외적으로 Column Drop 패턴에서는 없는 편이 소스를 줄이는데 도움됨.
+
+- Shifter
+  : Mostly Fluid 패턴과 같이 큰 화면에서는 고정 픽셀 / 작은 화면에서는 비율 형으로 변경.
+  : 레이아웃이 크게 변경되면 내부 요소의 디자인도 많이 변경해야하므로 번거롭다는 단점이 있음.
+
+- Tiny Tweaks
+  : PC 부터 모바일까지 모두 같은 형태로 디자인하는 방식.
+  : 간단한 사이트나 리스트 형태로 레이아웃된 사이트 패턴에 적합함.
+
+- Off canvas
+  : PC 웹 사이트를 모바일 디바이스로 가져오면서 컨텐츠의 크기와 양을 줄이지 않는 새로운 방법.
+  : 일부 영역을 숨김처리하여 사용자의 액션이나 제스처에 따라 숨겨둔 영역을 보여줌.
+  : 작은 디바이스에서 많은 것을 보여주는 방법보다 편리한 UX.
+  : 페이스 북 모바일 웹, 앱 등에서 상용중.
+  : 단순한 HTML / CSS로 구성되는 경우는 드물며 Java Script 와 JQuery 를 혼용하는 방법이 일반적임.

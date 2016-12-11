@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>네이버 레이아웃 연습</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<style type="text/css">
+	<!--
+		/* STR reset */
+		@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+		*{padding:0;margin:0; font-family: 'Nanum Gothic', sans-serif; font-size:14px; color:#666;}
+		ul,li,ol {list-style:none;}
+		a {text-decoration:none;}
+		.borlno {border-left:0 !important;}
+		/* END reset*/
+
+		/* STR top_nav */
+		#top_nav { height:35px; line-height:35px; border-bottom:1px solid #cacaca; background-color:#f7f7f7; position:relative; text-align:center;}
+		#top_nav .t_nav_pos {position:absolute; top:1px;}
+
+		#top_nav .t_nav_left { left:10px;}
+		#top_nav .t_nav_left .app_down {}
+		#top_nav .t_nav_left select {background-color:#fcfcfc;}
+
+		#top_nav .t_nav_center {}
+		#top_nav .t_nav_center a {display:inline-block; width:50px; border-right:1px solid #c8c8c8; background-color:#fff; text-align:center;}
+		#top_nav .t_nav_center a:first-child {border-left:1px solid #c8c8c8; border-bottom:1px solid #fff;}
+		#top_nav .t_nav_center .icon_01 {}
+		#top_nav .t_nav_center .icon_02 {}
+		#top_nav .t_nav_center .icon_03 {}
+
+		#top_nav .t_nav_right {right:10px;}
+		#top_nav .t_nav_right a {}
+		#top_nav .t_nav_right .quick_01 {}
+		#top_nav .t_nav_right .quick_02 {}
+		#top_nav .t_nav_right .quick_03 {}
+		/* END top_nav */
+		
+		#wrap {width:940px; margin:0 auto; overflow:hidden;}
+		
+		/* STR head */
+		#head { margin:40px 0 5px; position:relative;}
+		#head .head_top {padding-left:130px; margin-bottom:20px; overflow:hidden;}
+		#head .head_top div {float:left;}
+		#head .head_top h1 {float:left;width:180px; height:50px; background-color:#2db400;}
+		#head .head_top h1 a {display:block; height:inherit; line-height:50px; text-align:center; color:#fff;}
+		#head .head_top div.search_area {margin:0 5px 0 2px;}
+		#head .head_top div.search_area input {display:block; width:390px; height:46px; margin-bottom:8px; border:2px solid #2db400;}
+		#head .head_top div.search_area span {display:inline-block; width:10px; height:10px; margin-right:5px; background-color:green; line-height:0; font-size:0; overflow:hidden; text-indent:-20000;}
+		#head .head_top div.search_area a {display:inline-block; padding:0 3px; margin:0 6px;}
+		#head .head_top div.button_area {}
+		#head .head_top div.button_area .search_btn {display:block; width:60px; height:49px; margin-bottom:5px; line-height:45px; border:1px solid #2db400; background-color:#2db400; font-size:16px; color:#fff; text-align:center;}
+		#head .head_top div.button_area a {display:inline-block; padding:2px 5px; border:1px solid #f1f1f1; background-color:#f8f8f8; font-size:8px; font-weight:700;}
+		#head .head_top div.button_area .btn_prev {}
+		#head .head_top div.button_area .btn_next {}
+		#head .head_top div.ad_box { width:130px; height:50px; background-color:#f7f7f7; position:absolute; right:0; top:0;}
+		#head .head_top div.ad_box p {height:inherit; line-height:50px; text-align:center;}
+
+		#head .head_gnb {padding:12px; background-color:#2db400; overflow:hidden;}
+		#head .head_gnb ul {float:left;}
+		#head .head_gnb ul.menu_01{}
+		#head .head_gnb ul.menu_02{ padding:0 5px; margin:0 5px;border-left:1px solid #1fa100; border-right:1px solid #1fa100;}
+		#head .head_gnb ul.menu_03{}
+		#head .head_gnb ul.menu_04 {float:right;}
+		#head .head_gnb ul li {float:left;margin:0 5px;}
+		#head .head_gnb ul li a {display:inline-block; font-size:13px; color:#fff;}
+		#head .head_gnb ul.menu_01 li a {color:yellow;}
+		#head .head_gnb ul.menu_04 li a {width:130px; background-color:#197f00; text-align:center;}
+		/* END head */
+
+		/* STR cont_01 */
+		.cont_box > div > div{border:1px solid #ddd; }
+		#cont_01 {overflow:hidden;}
+		#cont_01 div.cont_01_left {float:left; width:631px; margin-right:5px; }
+		#cont_01 div.cont_01_left div.ct_01_ad {height:100px; background-color:#eee;}
+		#cont_01 div.cont_01_left div.ct_01_snews {padding:8px 12px; margin:5px 0; background-color:#f7f7f7;overflow:hidden;}
+		#cont_01 div.cont_01_left div.ct_01_snews ul {}
+		#cont_01 div.cont_01_left div.ct_01_snews ul li {float:left;}
+		#cont_01 div.cont_01_left div.ct_01_snews ul li a {display:block;}
+		#cont_01 div.cont_01_left div.ct_01_snews ul.snews_title {float:left;}
+		#cont_01 div.cont_01_left div.ct_01_snews ul.snews_title li:first-child a {margin-right:5px; font-weight:700;}
+		#cont_01 div.cont_01_left div.ct_01_snews ul.snews_list {float:right;}
+		#cont_01 div.cont_01_left div.ct_01_snews ul.snews_list li {padding:0 5px; border-left:1px solid #ddd; text-align:center;}
+		#cont_01 div.cont_01_left div.ct_01_snews ul.snews_list li:first-child {border-left:0;}
+		#cont_01 div.cont_01_left div.ct_01_snews ul.snews_list li a {font-size:12px;}
+		#cont_01 div.cont_01_left div.ct_01_snews ul.snews_list li a span{display:inline-block;width:10px; height:10px; background-color:#197f00; line-height:0; font-size:0; overflow:hidden; text-indent:-20000;}
+		
+		#cont_01 div.cont_01_left div.ct_01_bnews {}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top {padding:8px 14px; border-bottom:1px solid #ddd; overflow:hidden; }
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top ul.bnew_t_left {float:left;padding-top:3px;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top ul.bnew_t_left li {float:left;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top ul.bnew_t_left li.t_lf_bold a {font-weight:700;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top ul.bnew_t_left li.t_lf_bold2 a {margin:0 9px;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top ul.bnew_t_left li.t_lf_last{ padding:0 5px; border-left:1px solid #eee;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top ul.bnew_t_left li.t_lf_last a {}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top ul.bnew_t_left li a {display:block; font-size:12px;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top div.bnew_t_right {float:right;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top div.bnew_t_right a {display:inline-block; padding:3px; border:1px solid #ddd; background-color:#f5f5f5; font-size:12px; }
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top div.bnew_t_right a.bntr_list01 {border-right:0 ;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top div.bnew_t_right a.bntr_list02 {}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_top div.bnew_t_right select {font-size:12px;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_center {}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_center ul.bnews_list {overflow:hidden;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_center ul.bnews_list li {float:left; width:104px; border-left:1px solid #ddd; border-bottom:1px solid #ddd; text-align:center;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_center ul.bnews_list li a {display:block; padding:30px 0;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_bottom {padding:10px 15px; overflow:hidden;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_bottom a {display:inline-block; font-size:12px;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_bottom a.bnewsb_seting {float:left; margin-top:2px;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_bottom p {float:right; font-size:12px;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_bottom p span { margin-right:8px;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_bottom p a {padding:2px 5px; border:1px solid #eee; color:#1fa100;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_bottom p span,
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_bottom p a {display:inline-block; font-size:12px;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_bottom p a.bnewsb_prev {border-right:0;}
+		#cont_01 div.cont_01_left div.ct_01_bnews div.bnews_bottom p a.bnewsb_next {}
+		
+		#cont_01 div.cont_01_right {float:right; width:303px;  }
+		#cont_01 div.cont_01_right > div {background-color:#f7f7f7;}
+		#cont_01 div.cont_01_right .login_box {overflow:hidden;padding:12px 15px; border-bottom:0;}
+		#cont_01 div.cont_01_right .login_box .login_area {float:left; width: 185px; margin-bottom:10px;}
+		#cont_01 div.cont_01_right .login_box .login_area div.login_input {float:left;}
+		#cont_01 div.cont_01_right .login_box .login_area div.login_input input {display:block; width:110px;padding:5px 4px; border:1px solid #aaa;}
+		#cont_01 div.cont_01_right .login_box .login_area div.login_input input:first-child {border-bottom:0;}
+		#cont_01 div.cont_01_right .login_box .login_area button {float:left; padding:19px 13px 20px; border:1px solid #aaa; border-left:0; background-color:#fff; font-size:12px; cursor:pointer;}
+		
+		#cont_01 div.cont_01_right .login_box .login_option {float:right; }
+		#cont_01 div.cont_01_right .login_box .login_option > div {padding:5px 6px; border:1px solid #ddd;}
+		#cont_01 div.cont_01_right .login_box .login_option > div:first-child {border-bottom:none;}
+		#cont_01 div.cont_01_right .login_box .login_option > div a {display:inline-block; font-size:11px; }
+		#cont_01 div.cont_01_right .login_box .login_option > div a:hover {text-decoration:underline;}
+		#cont_01 div.cont_01_right .login_box .login_option a.login_ip {border-bottom:0;}
+		#cont_01 div.cont_01_right .login_box .login_option a.login_onoff {display:inline-block; padding:1px 2px; margin-left:4px; border:1px solid #888; font-size:8px; font-weight:bolder; color:#888;}
+		#cont_01 div.cont_01_right .login_box .login_option a.login_onoff:hover {text-decoration:none;}
+		#cont_01 div.cont_01_right .login_box .login_option a.login_once {}
+		#cont_01 div.cont_01_right .login_box .login_option a.login_once span {}
+
+		#cont_01 div.cont_01_right .login_box .login_sub {clear:both;overflow:hidden;}
+		#cont_01 div.cont_01_right .login_box .login_sub div.keep_login {float:left;}
+		#cont_01 div.cont_01_right .login_box .login_sub div.keep_login input {vertical-align:middle;}
+		#cont_01 div.cont_01_right .login_box .login_sub div.keep_login label {}
+		#cont_01 div.cont_01_right .login_box .login_sub div.keep_login label span {font-size:11px;}
+		#cont_01 div.cont_01_right .login_box .login_sub div.member_option {float:right;}
+		#cont_01 div.cont_01_right .login_box .login_sub div.member_option a {font-size:11px;}
+		#cont_01 div.cont_01_right .login_box .login_sub div.member_option a.member_join {}
+		#cont_01 div.cont_01_right .login_box .login_sub div.member_option a.member_idpw {}
+
+		#cont_01 div.cont_01_right .line_info {padding:12px 15px;}
+		#cont_01 div.cont_01_right .line_info ul.today_box {overflow:hidden;}
+		#cont_01 div.cont_01_right .line_info ul.today_box li {float:right;}
+		#cont_01 div.cont_01_right .line_info ul.today_box li:first-child {float:left; font-weight:700;}
+		#cont_01 div.cont_01_right .line_info ul.today_box li a {display:inline-block;font-size:13px;}
+		#cont_01 div.cont_01_right .line_info ul.today_box li a.today_last {margin-left:5px;}
+		#cont_01 div.cont_01_right .line_info ul.line_list {margin:8px 0px}
+		#cont_01 div.cont_01_right .line_info ul.line_list li {line-height:140%; overflow:hidden;}
+		#cont_01 div.cont_01_right .line_info ul.line_list li:first-child a {font-weight:700; color:#444;}
+		#cont_01 div.cont_01_right .line_info ul.line_list li a:first-child {margin-left:0; font-weight:700; color:#444;}
+		#cont_01 div.cont_01_right .line_info ul.line_list li a {display:inline-block;margin:0px 5px; font-size:13px; }
+		#cont_01 div.cont_01_right .line_info ul.line_list li a i { font-size:11px; color:red;} 
+		#cont_01 div.cont_01_right .line_info ul.line_list li span {display:inline-block; float:right;}
+		#cont_01 div.cont_01_right .line_info ul.line_list li span input {width:50px; height:13px; vertical-align:3px;}
+		#cont_01 div.cont_01_right .line_info ul.line_list li span a {line-height:15px; height:13px; padding:0 5px 2px; margin:0; border:1px solid #999; border-left:0 ; vertical-align:top; font-size:10px;}
+		#cont_01 div.cont_01_right .line_info ul.widget {overflow:hidden;}
+		#cont_01 div.cont_01_right .line_info ul.widget li {float:right;}
+		#cont_01 div.cont_01_right .line_info ul.widget li:first-child {float:left;}
+		#cont_01 div.cont_01_right .line_info ul.widget li a {display:inline-block; background-color:#fff; padding:5px 5px; border:1px solid #eee; font-size:12px;}
+		#cont_01 div.cont_01_right .line_info ul.widget li a.line_page {padding:3px 10px; font-weight:700; color:#2db400;}
+		#cont_01 div.cont_01_right .line_info ul.widget li span {font-size:12px; color:#999;}
+		#cont_01 div.cont_01_right .line_info ul.widget li span span {font-weight:700;}
+
+		#cont_01 div.cont_01_right .right_ad {height:100px; margin-top:10px; }
+		/* END cont_01 */
+	//-->
+	</style>
+</head>
+<body>
+	<!-- STR top_nav -->
+	<div id="top_nav">
+		<div class="t_nav_pos t_nav_left">
+			<a class="app_down" href="#;">앱 다운로드</a>
+			<select name="" title="시스템 나눔글꼴">
+				<option value="시스템 나눔글꼴" selected="selected">시스템 나눔글꼴</option>
+				<option value="시스템 나눔글꼴2">시스템 나눔글꼴2</option>
+			</select>
+		</div>
+		<div class="t_nav_center">
+			<a class="icon_01" href="#;">집</a><a class="icon_02" href="#;">박스</a><a class="icon_03" href="#;">미</a>
+		</div>
+		<div class="t_nav_pos t_nav_right">
+			<a class="quick_01" href="#;">해피빈</a>
+			<a class="quick_02" href="#;">쥬니어 네이버</a>
+			<a class="quick_03" href="#;">한게임</a>
+		</div>
+	</div>
+	<!-- END top_nav -->
+	<!-- STR wrap -->
+	<div id="wrap">
+		<!-- STR head -->
+		<div id="head">
+			<div class="head_top">
+				<h1><a href="#;">로고부분</a></h1>
+				<div class="search_area">
+					<input type="text" class="" value="" name=""/>
+					<span>돋보기</span><a href="#;">추천키워드</a><a href="#;">추천키워드</a><a href="#;">추천키워드</a>
+				</div>
+				<div class="button_area">
+					<button class="search_btn">검 색</button>
+					<a class="btn_prev" href="#;">&lt;</a><a class="btn_next" href="#;">&gt</a>
+				</div>
+				<div class="ad_box">
+					<p>광고 부분</p>
+				</div>
+			</div>
+			<div class="head_gnb">
+				<ul class="menu_01">
+					<li><a href="#;">메뉴1</a></li>
+					<li><a href="#;">메뉴1</a></li>
+					<li><a href="#;">메뉴1</a></li>
+					<li><a href="#;">메뉴1</a></li>
+					<li><a href="#;">메뉴1</a></li>
+					<li><a href="#;">메뉴1</a></li>
+				</ul>
+				<ul class="menu_02">
+					<li><a href="#;">메뉴2</a></li>
+					<li><a href="#;">메뉴2</a></li>
+					<li><a href="#;">메뉴2</a></li>
+					<li><a href="#;">메뉴2</a></li>
+					<li><a href="#;">메뉴2</a></li>
+					<li><a href="#;">메뉴2</a></li>
+					<li><a href="#;">메뉴2</a></li>
+					<li><a href="#;">메뉴2</a></li>
+				</ul>
+				<ul class="menu_03">
+					<li><a href="#;">메뉴3</a></li>
+					<li><a href="#;">메뉴3</a></li>
+				</ul>
+				<ul class="menu_04">
+					<li><a href="#;">실시간 검색1</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- END head -->
+		<!-- STR cont_01 -->
+		<div id="cont_01" class="cont_box">
+			<!-- STR cont_01_left -->
+			<div class="cont_01_left">
+				<div class="ct_01_ad">
+					dd
+				</div>
+				<div class="ct_01_snews">
+					<ul class="snews_title">
+						<li><a href="#;">타이틀</a></li>
+						<li><a href="#;">간략한 뉴스내용</a></li>
+					</ul>
+					<ul class="snews_list">
+						<li><a href="#;">네이버뉴스</a></li>
+						<li><a href="#;">연예</a></li>
+						<li><a href="#;">스포츠</a></li>
+						<li><a href="#;">경제</a></li>
+						<li><a href="#;"><span>아이콘</span>총선</a></li>
+					</ul>
+				</div>
+				<div class="ct_01_bnews">
+					<div class="bnews_top">
+						<ul class="bnew_t_left">
+							<li class="t_lf_bold"><a href="#;">뉴스 스탠다드</a></li>
+							<li class="t_lf_bold t_lf_bold2"><a href="#;">전체 언론사</a></li>
+							<li class="t_lf_last"><a href="#;">MY뉴스</a></li>
+						</ul>
+						<div class="bnew_t_right">
+							<a class="bntr_list01" href="#;">네모</a><a class="bntr_list02" href="#;">줄줄</a>
+							<select name="" title="">
+								<option value="" selected="selected">주요언론사</option>
+								<option value="">네이버</option>
+							</select>
+						</div>
+					</div>
+					<div class="bnews_center">
+						<ul class="bnews_list">
+							<li class="borlno"><a href="#;">1</a></li>
+							<li><a href="#;">2</a></li>
+							<li><a href="#;">3</a></li>
+							<li><a href="#;">4</a></li>
+							<li><a href="#;">5</a></li>
+							<li><a href="#;">6</a></li>
+							<li class="borlno"><a href="#;">7</a></li>
+							<li><a href="#;">8</a></li>
+							<li><a href="#;">9</a></li>
+							<li><a href="#;">10</a></li>
+							<li><a href="#;">11</a></li>
+							<li><a href="#;">12</a></li>
+						</ul>
+					</div>
+					<div class="bnews_bottom">
+						<a class="bnewsb_seting"href="#;">구독설정</a>
+						<p>
+							<span>1/5</span><a class="bnewsb_prev"href="#;">&lt;</a><a class="bnewsb_next"href="#;">&gt;</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<!-- END cont_01_left -->
+			<!-- STR cont_01_right -->
+			<div class="cont_01_right">
+				<div class="login_box">
+					<div class="login_area">
+						<div class="login_input">
+							<input type="text" class="borbno login" value="" name=""/>
+							<input type="text" class="login" value="" name=""/>
+						</div>
+						<button class="">로그인</button>
+					</div>
+					<div class="login_option">
+						<div>
+							<a class="login_ip" href="#;">IP보안</a>
+							<a class="login_onoff" href="#;">ON</a>
+						</div>
+						<div>
+							<a class="login_once" href="#;">일회용 로그인</a>
+						</div>
+					</div>
+					<div class="login_sub">
+						<div class="keep_login">
+							<form method="" action="">
+								<input type="checkbox" id="keep_iog" value="" name=""/>
+								<label for="keep_iog">
+									<span>로그인상태유지</span>
+								</label>
+							</form>
+						</div>
+						<div class="member_option">
+							<a class="member_join" href="#;">회원가입</a>
+							<a class="member_idpw" href="#;">아이디/비밀번호찾기</a>
+						</div>
+					</div>
+				</div>
+				<div class="line_info">
+					<ul class="today_box">
+						<li><a href="#;">투데이</a></li>
+						<li>
+							<a href="#;">날짜</a>
+							<a class="today_last" href="#;">바로가기</a>
+						</li>
+					</ul>
+					<ul class="line_list">
+						<li>
+							<a href="#;">총선</a><a href="#;">최신여론</a><a href="#;">지지율</a>
+						</li>
+						<li>
+							<a href="#;">총선</a><a href="#;">최신여론</a><a href="#;">지지율</a>
+						</li>
+						<li>
+							<a href="#;">총선</a><a href="#;">최신여론</a><a href="#;">지지율</a>
+						</li>
+						<li>
+							<a href="#;">총선</a><a href="#;">코스피가 올라간당! <i>▲ 999</i></a>
+							<span>
+								<input type="text" class="" value="" name=""/><a href="#;">?</a>
+							</span>
+						</li>
+					</ul>
+					<ul class="widget">
+						<li><a href="#;">생활위젯</a></li>
+						<li>
+							<span><span>1</span>/3</span>
+							<a class="line_page" href="#;">&lt;</a><a style="border-left:0;" class="line_page" href="#;">&gt;</a>
+						</li>
+					</ul>
+				</div>
+				<div class="right_ad">
+					ad
+				</div>
+			</div>
+			<!-- END cont_01_right -->
+		</div>
+		<!-- END cont_01 -->
+	</div>
+	<!-- END wrap -->
+</body>
+</html>
